@@ -1,13 +1,7 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=, initial-scale=1.0">
-        <title>About Us</title>
-        <link rel="stylesheet" href="register1.css">
-    </head>
-    <body>
+<?php 
+include_once __DIR__.'/partials/header.php';
+?>
+   
         <div>
           
             
@@ -55,5 +49,5 @@
         
           
        </div>
-    </body>
-</html>
+    <!-- Footer -->
+    <?php include_once __DIR__.'/partials/footer.php'; ?>

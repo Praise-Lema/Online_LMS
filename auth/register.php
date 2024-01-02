@@ -1,50 +1,10 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="register.css">
-    </head>
-    <body>
+<?php 
+include_once __DIR__.'/../partials/header.php';
+include_once __DIR__.'/register_script.php';
+include_once __DIR__.'/../partials/functions.php';
 
-        <div class="form-container">
-            <form action="" method="post" class="form  ">
-                <h2 class="form-title">Register</h2>
-                
-                <div class="form-group ">
-                    <input type="text" class="form-control" name="fname" placeholder="First Name" id="first-name">
-                </div>
-                <div class="form-group ">
-                    <input type="text" class="form-control" name="lname" placeholder="Last Name" id="last-name">
-                </div>
-                <div class="form-group ">
-                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
-                </div>
-        
-                <div class="form-group ">
-                    <input type="password" class="form-control" name="pwd" placeholder="Password" id="password" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="cpwd" placeholder="Confirm Password" id="confirmPasword">
-                </div>
-        
-                <div class="form-group ">
-                    <label for="user-type" class="select-label">Select User Type:</label>
-                    <select name="usertype" class="select" >
-                        <option>Admin</option>
-                        <option>User</option>
-                    </select>
-                </div>
-                <div>
-                    <button onclick="passwordCheck()" id="register" value="register" class="button">register<button>
-                    
-                </div>
-            
-    </body>
-</html> -->
-
-<?php include_once __DIR__.'/../partials/header.php'; ?>
+check_login();
+?>
 
 <!-- <div class="bg-background"></div> -->
 <div class="img">
@@ -57,36 +17,42 @@
     <div class="section">
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center gap-5">
             <h5>Already have an account?</h5>
-            <a href="<?php echo APP_URL?>/auth/login.php" class="btn btn-dark bg-gradient">Login</a>
+            <a href="<?php echo APP_URL?>/auth/login.php" class="btn btn-dark bg-gradient border-0 shadow">Login</a>
         </div>
         <hr class="vr vr-register text-black">
     </div>
 
     <!-- Middle section -->
     <div class="section">
-        <div class="container d-flex flex-column justify-content-between align-items-center h-100 py-5">
+        <div class="container d-flex flex-column justify-content-between align-items-center h-100 py-4">
             <h3 class="form-title">Register</h3>
             <h5>Register to continue..</h5>
-            <form action="" class="form">
-                <div class="form-group py-3">
-                    <input type="text" class="form-control rounded-0 bg-transparent fs-6" name="username" id="" placeholder="First Name">
+            <form action="" method="POST" class="form mb-2">
+                <div class="input-group py-2">
+                    <!-- <span class="input-group-text fa fa-user bg-transparent border-0"></span> -->
+                    <input type="text" class="form-control rounded-0 <?php echo isset($errors['fname']) ? 'is-invalid' : ''?> bg-transparent fs-6" name="fname" placeholder="First Name" value="<?php echo $firstname ?>">
+                    <span class="invalid-feedback"><?php echo $errors['fname']?></span>
                 </div>
-                <div class="form-group py-3">
-                    <input type="text" class="form-control rounded-0 bg-transparent fs-6" name="username" id="" placeholder="Last Name">
+                <div class="input-group py-2">
+                    <input type="text" class="form-control rounded-0 <?php echo isset($errors['lname']) ? 'is-invalid' : ''?> bg-transparent fs-6" name="lname" placeholder="Last Name" value="<?php echo $lastname ?>">
+                    <span class="invalid-feedback"><?php echo $errors['lname']?></span>
                 </div>
-                <div class="form-group py-3">
-                    <input type="email" class="form-control rounded-0 bg-transparent fs-6" name="username" id="" placeholder="Email">
+                <div class="input-group py-2">
+                    <input type="email" class="form-control rounded-0 <?php echo isset($errors['email']) ? 'is-invalid' : ''?> bg-transparent fs-6" name="email" placeholder="Email" value="<?php echo $email ?>">
+                    <span class="invalid-feedback"><?php echo $errors['email']?></span>
                 </div>
-                <div class="form-group py-3">
-                    <input type="password" class="form-control rounded-0 bg-transparent fs-6" name="username" id="" placeholder="Password">
+                <div class="input-group py-2">
+                    <input type="password" class="form-control rounded-0 <?php echo isset($errors['pwd']) ? 'is-invalid' : ''?> bg-transparent fs-6" name="password" placeholder="Password">
+                    <span class="invalid-feedback"><?php echo $errors['pwd']?></span>
                 </div>
 
-                <div class="form-group py-3">
-                    <input type="password" class=" form-control rounded-0 fs-6 bg-transparent" name="passwd" id="" placeholder="Confirm Password">
+                <div class="input-group py-2">
+                    <input type="password" class=" form-control rounded-0 <?php echo isset($errors['conf-pwd']) ? 'is-invalid' : ''?> fs-6 bg-transparent" name="confirm_pwd" placeholder="Confirm Password">
+                    <span class="invalid-feedback"><?php echo $errors['conf-pwd']?></span>
                 </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Register" class="btn btn-dark bg-gradient">
+                <div class="input-group py-2">
+                    <input type="submit" value="Register" class="btn btn-dark form-control bg-gradient border-0 shadow">
                 </div>
             </form>
         </div>   

@@ -1,4 +1,7 @@
-<?php define('APP_URL','http://localhost/LMS'); ?>
+<?php 
+define('APP_URL','http://localhost/LMS');
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +20,11 @@
     <title>Library Management System</title>
 </head>
 <body>
+
+<?php include_once __DIR__.'/../database/connection.php'; ?>
+<?php include_once __DIR__.'/navbar.php'; ?>
+
     <div class="center" id="preloader">
         <div class="ring"></div>
-        <span>Loading..</span>
+        <span class="loading">Loading..</span>
     </div>
-<?php include_once __DIR__.'/navbar.php'; ?>

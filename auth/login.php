@@ -1,4 +1,10 @@
-<?php include_once __DIR__.'/../partials/header.php'; ?>
+<?php 
+include_once __DIR__.'/../partials/header.php'; 
+include_once __DIR__.'/login_script.php';
+include_once __DIR__.'/../partials/functions.php';
+
+check_login();
+?>
 
 <!-- <div class="bg-background"></div> -->
 <div class="img">
@@ -36,17 +42,19 @@
         <div class="container d-flex flex-column justify-content-between align-items-center h-100 py-5">
             <h3 class="form-title">Login</h3>
             <h5>Login to continue..</h5>
-            <form action="" class="form py-3">
-                <div class="form-group py-3">
-                    <input type="text" class="form-control rounded-0 border-dark bg-transparent" name="username" id="" placeholder="Email">
+            <form action="login.php" method="POST" class="form py-3">
+                <div class="input-group py-3">
+                    <input type="email" class="form-control rounded-0 <?php echo isset($errors['email']) ? 'is-invalid' : ''?> bg-transparent" name="email" placeholder="Email" value="<?php echo $email ?>">
+                    <span class="invalid-feedback"><?php echo $errors['email']?></span>
                 </div>
 
-                <div class="form-group py-3">
-                    <input type="password" class="form-control rounded-0 border-dark bg-transparent" name="passwd" id="" placeholder="Password">
+                <div class="input-group py-3">
+                    <input type="password" class="form-control <?php echo isset($errors['password']) ? 'is-invalid' : ''?> rounded-0 bg-transparent" name="password" placeholder="Password">
+                    <span class="invalid-feedback"><?php echo $errors['password']?></span>
                 </div>
 
-                <div class="form-group py-3">
-                    <input type="submit" value="Login" class="btn form-control btn-dark bg-gradient">
+                <div class="input-group py-3">
+                    <input type="submit" value="Login" class="btn form-control btn-dark border-0 bg-gradient shadow">
                 </div>
             </form>
         </div>   
@@ -57,7 +65,7 @@
     <hr class="vr vr-login text-black">
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center gap-5">
             <h5>Don't have an account?</h5>
-            <a href="<?php echo APP_URL?>/auth/register.php" class="btn btn-dark bg-gradient">Register</a>
+            <a href="<?php echo APP_URL?>/auth/register.php" class="btn btn-dark bg-gradient border-0 shadow">Register</a>
         </div>
     </div>
 </div>

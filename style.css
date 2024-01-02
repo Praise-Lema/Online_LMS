@@ -11,12 +11,54 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-/* Navbar style section */
+.fs-sm{
+    font-size: 11.5px;
+}
 
-.navbar{
+span.invalid-feedback{
+    font-size: 14px;
+}
+
+/* Navbar style section */
+.navbar, .sidebar{
     background: #070000; 
     background: -webkit-linear-gradient(to right, #070000, #0c0600, #070000); 
     background: linear-gradient(to right, #070000, #0a0601f5, #070000);
+}
+
+.brand-text{
+    color: #e46008 !important;
+    text-shadow: 2px 2px 2px #1c3955f5;
+}
+
+/* Sidebar section */
+.sidebar{
+    color: #fff;
+    width: 22%;
+    height: 92.1vh;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    box-shadow: 2px 2px 10px 2px #000;
+}
+
+.sidebar_item{
+    transition: all .22s;
+}
+
+.sidebar_item:hover{
+    color: #b34902f5 !important;
+}
+
+/* mainbar section */
+.main-bar{
+    border: 1px solid black;
+    margin-left: 22%;
+    width: 78%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 div.black-glass{
@@ -32,17 +74,18 @@ div.black-glass{
     padding-block: 1.8rem;
 }
 
-a.btn{
+a.btn-home{
     text-decoration: none;
     color: white;
-    border: 1px solid #fff;
+    /* border: 1px solid #ffffff41; */
     padding: .7rem .7rem;
     border-radius: 11px;
     transition: all .23s;
 }
 
-a.btn:hover{
-    background: rgba(221, 166, 63, 0.6);
+a.btn-home:hover{
+    /* background: rgba(221, 166, 63, 0.6); */
+    background: #b349021c;
     border: none;
 }
 
@@ -78,21 +121,20 @@ img.parallax{
 
 .head-text{
     font-size: 4rem;
-    font-weight: 100;
-    font-family: cursive;
-    font-style: italic;
-    color: rgb(230, 180, 88);
-    text-shadow: 2px 4px 3px #4d4b4b;
+    font-weight: 400;
+    font-family: 'Poppins';
+    color: #be5007;
+    text-shadow: 2px 4px 10px #833500f5;
     letter-spacing: 0rem;
     z-index: -1;
 }
 
 .head-text::first-letter{
-    font-size: 8rem;
+    font-size: 6rem;
 }
 
 .sub-head{
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-transform: uppercase;
     font-family: 'Cursive', Courier, monospace;
     color: #ffe;
@@ -102,6 +144,8 @@ section.overflow{
     height: 200vh;
     width: 100vh;
 }
+
+/* Categories section */
 
 .mainDIV{
     position: relative;
@@ -127,7 +171,14 @@ div.gallery {
     width: 30%;
     height: auto;
     box-shadow: 4px 6px 8px #000 5px;
+    transition: all .22s;
   }
+
+div.gallery:hover{
+    transform: scale(1.03);
+    /* background: rgba(221, 166, 63, 0.2); */
+    background: #b349021c;
+}
 
   .img-category{
     width: 100%;
@@ -139,9 +190,10 @@ div.gallery {
     text-align: center;
   }
 
+  /* Footer section */
+
   footer {
-    position: relative;
-    bottom: 0;
+    position: absolute;
     width: 100%;
     height: auto;
     padding-block: 1rem;

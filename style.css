@@ -52,10 +52,10 @@ span.invalid-feedback{
 
 /* mainbar section */
 .main-bar{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-left: 22%;
     width: 78%;
-    height: 100vh;
+    height: auto;
     position: relative;
     top: 0;
     left: 0;
@@ -190,10 +190,49 @@ div.gallery:hover{
     text-align: center;
   }
 
+  /* Enquiry form section */
+.overflow{
+    position: relative;
+    top: 0;
+    height: 70vh;
+    width: 90vw;
+}
+
+/* .enquiry::placeholder{
+    color: #cccccc;
+} */
+
+
+/* Services section */
+
+div.service-desc{
+    width: 100%;
+    height: auto;
+}
+
+.card{
+    transition: all .23s;
+}
+
+/* About Us Section */
+.card:hover {
+    transform: scale(1.03);
+    /* background: rgba(221, 166, 63, 0.2); */
+    background: #b349021c !important;
+}
+
+.group-img{
+    transition: all .23s;
+}
+
+.group-img:hover {
+    transform: scale(1.03);
+}
+
   /* Footer section */
 
   footer {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: auto;
     padding-block: 1rem;

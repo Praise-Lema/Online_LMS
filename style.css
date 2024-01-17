@@ -15,15 +15,24 @@ body{
     font-size: 11.5px;
 }
 
+/* Tables */
+th{
+    font-size: 1rem;
+}
+
 span.invalid-feedback{
     font-size: 14px;
 }
 
 /* Navbar style section */
-.navbar, .sidebar{
+.navbar, .sidebar, th, footer{
     background: #070000; 
     background: -webkit-linear-gradient(to right, #070000, #0c0600, #070000); 
     background: linear-gradient(to right, #070000, #0a0601f5, #070000);
+}
+
+.d-card-color{
+    color: #140800; 
 }
 
 .brand-text{
@@ -236,5 +245,5 @@ div.service-desc{
     width: 100%;
     height: auto;
     padding-block: 1rem;
-    background: rgba(0, 0, 0, 0.9);
+    /* background: rgba(0, 0, 0, 0.9); */
   }

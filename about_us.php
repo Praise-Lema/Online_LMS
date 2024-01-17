@@ -9,8 +9,8 @@ include_once __DIR__.'/partials/header.php';
                   <div class="me-4 w-50">
                         <span class="mt-3" style="border:2px solid black; position: absolute;left: 0; height: 2px; width: 45px;"></span>
                         <h1 class="position-relative">Who We Are</h1>
-                        <p>Founded in 2023, we are a multidisciplinary team of designers, engineers and delivery experts with a diverse mix of user experience design expertise. We use creative thinking and user-centred design processes – and 20 years of know-how – to help public sector teams create and run great public services.</p>
-                        <p>For almost two decades, we have been championing web accessibility and user-centred design principles, designing simple and intuitive digital services that meet user needs. We have deep expertise in enterprise WordPress, drawn from years of experience creating websites for clients such as Leeds Teaching Hospitals NHS Trust.</p>
+                        <p>Founded in 2023, we are a multidisciplinary team of designers and delivery experts with a diverse mix of user experience design expertise. We use creative thinking and user-centred design processes – and 20 years of know-how – to run great public services.</p>
+                        <p>For almost two decades, we have been championing web accessibility and user-centred design principles, designing simple and intuitive digital services. We have deep expertise in enterprise WordPress, drawn from years of experience creating websites for clients such as Leeds Teaching Hospitals NHS Trust.</p>
                   </div>
 
                   <div class="img-section w-50">

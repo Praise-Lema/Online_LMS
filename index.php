@@ -84,6 +84,7 @@ include_once __DIR__.'/partials/header.php';
         </div>
     </div>
 
+    <?php include_once __DIR__.'/scripts/enquiry_script.php'; ?>
     <!-- Enquiry Section -->
     <div class="container d-flex flex-column align-items-center justify-content-center" id="enquiry">
         <h2 class="category-title">Any Enquiry</h2>
@@ -91,20 +92,20 @@ include_once __DIR__.'/partials/header.php';
             <form action="" method="POST" class="form w-50 p-4">
                     <div class="input-group py-2">
                         <!-- <span class="input-group-text fa fa-user bg-transparent border-0"></span> -->
-                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['fname']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="name" placeholder="Name" value="<?php echo $firstname ?>">
-                        <span class="invalid-feedback"><?php echo $errors['fname']?></span>
+                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['name']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="name" placeholder="Name" value="<?php echo $name ?>">
+                        <span class="invalid-feedback"><?php echo $errors['name']?></span>
                     </div>
                     <div class="input-group py-2">
-                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['lname']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="email" placeholder="Email" value="<?php echo $lastname ?>">
-                        <span class="invalid-feedback"><?php echo $errors['lname']?></span>
-                    </div>
-                    <div class="input-group py-2">
-                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['email']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="subject" placeholder="Subject" value="<?php echo $email ?>">
+                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['email']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="email" placeholder="Email" value="<?php echo $email ?>">
                         <span class="invalid-feedback"><?php echo $errors['email']?></span>
                     </div>
                     <div class="input-group py-2">
-                        <textarea name="message" id="floatingTextarea2" class="form-control bg-transparent rounded-0 enquiry" placeholder="Write Your Message Here" cols="20" rows="5" style="border: none; border-bottom: 2px solid #4f4f50;"></textarea>
-                        <span class="invalid-feedback"><?php echo $errors['email']?></span>
+                        <input type="text" class="form-control rounded-0 <?php echo isset($errors['subject']) ? 'is-invalid' : ''?> bg-transparent fs-6 enquiry" name="subject" placeholder="Subject" value="<?php echo $subject ?>">
+                        <span class="invalid-feedback"><?php echo $errors['subject']?></span>
+                    </div>
+                    <div class="input-group py-2">
+                        <textarea name="description" id="floatingTextarea2" class="form-control bg-transparent rounded-0 enquiry <?php echo isset($errors['description']) ? 'is-invalid' : ''?>" placeholder="Write Your Message Here" cols="20" rows="5" style="border: none; border-bottom: 2px solid #4f4f50;"></textarea>
+                        <span class="invalid-feedback"><?php echo $errors['description']?></span>
                     </div>
 
                     <div class="input-group pt-4">

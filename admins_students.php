@@ -3,6 +3,7 @@ include_once __DIR__.'/partials/header.php';
 include_once __DIR__.'/partials/functions.php';
 check_logout();
 include_once __DIR__.'/partials/sidebar.php';
+include_once __DIR__.'/scripts/users_script.php';
 ?>
 
     <!-- Main bar -->
@@ -25,16 +26,17 @@ include_once __DIR__.'/partials/sidebar.php';
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($Admins as $i => $admin): ?>
+                <?php while($admin = mysqli_fetch_array($admin_result)):?>
                 <tr>
-                    <td><?php echo $i + 1; ?></td>
-                    <td><?php echo $admin['firstName']; ?></td>
-                    <td><?php echo $admin['lastName']; ?></td>
-                    <td><?php echo $admin['email']; ?></td>
-                    <td class="<?php if($admin['status'] == "active"){echo "text-success";} else{echo "text-danger";}?>"><?php echo $admin['status']; ?></td>
-                    <td><a href="./Edits/editUser.php?user_id=<?php echo $admin['id'];?>" class="btn btn-outline-dark mx-2">Change Status</a><a href="deleteUser.php?id=<?php echo $admin['id'];?>" class="btn btn-outline-danger">Delete</a></td>
+                    <td class="fs-6"><?php echo ++$i; ?></td>
+                    <td class="fs-6"><?php echo $admin['first_name'] ?></td>
+                    <td class="fs-6"><?php echo $admin['last_name'] ?></td>
+                    <td class="fs-6"><?php echo $admin['email'] ?></td>
+                    <td class="fs-6"><?php echo $admin['status'] == 1 ? 'Active': 'Inactive' ?></td>
+                    <td><a href="#" class="btn btn-sm btn-outline-dark mx-2">Change Status</a>
+                    <a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
                 </tr>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </tbody>
     </table>
 
@@ -55,16 +57,17 @@ include_once __DIR__.'/partials/sidebar.php';
             </tr>
         </thead>
         <tbody>
-            <?php foreach($students as $i => $student): ?>
+        <?php $i = 0; while($student = mysqli_fetch_assoc($student_result)):?>
             <tr>
-                <td><?php echo $i + 1; ?></td>
-                <td><?php echo $student['firstName']; ?></td>
-                <td><?php echo $student['lastName']; ?></td>
-                <td><?php echo $student['email']; ?></td>
-                <td class="<?php if($student['status'] == "active"){echo "text-success";} else{echo "text-danger";}?>"><?php echo $student['status']; ?></td>
-                <td><a href="./Edits/editUser.php?user_id=<?php echo $student['id'];?>" class="btn btn-outline-dark mx-2">Change Status</a><a href="deleteUser.php?id=<?php echo $student['id'];?>" class="btn btn-outline-danger">Delete</a></td>
+                <td class="fs-6"><?php echo ++$i; ?></td>
+                <td class="fs-6"><?php echo $student['first_name'] ?></td>
+                <td class="fs-6"><?php echo $student['last_name'] ?></td>
+                <td class="fs-6"><?php echo $student['email'] ?></td>
+                <td class="fs-6"><?php echo $student['status'] == 1 ? 'Active': 'Inactive' ?></td>
+                <td class="fs-6"><a href="#" class="btn btn-sm btn-outline-dark mx-2">Change Status</a>
+                <a href="#" class="btn btn-sm btn-outline-danger">Delete</a></td>
             </tr>
-            <?php endforeach; ?>
+        <?php endwhile; ?>
         </tbody>
     </table>
 

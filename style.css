@@ -11,6 +11,36 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+#particles-js, #particle-js{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 98vw;
+    background: transparent;
+}
+
+.my-card{
+    width: 100%;
+    height: auto;
+    background: rgba(248, 248, 248, 0.408);
+    box-shadow: 1px 3px 5px rgba(0,0,0,.15);
+    margin: 1rem 0 0 1rem;
+    border-radius: .4rem;
+    text-align: start;
+    padding: .7rem 1.5rem;
+    transition: all .23s;
+  }
+  
+  .my-card:hover{
+    transform: scale(1.01);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, .20);
+  }
+  
+  p.my-text{
+    font-size: .87rem;
+    font-weight: 300;
+  }
+
 .fs-sm{
     font-size: 11.5px;
 }

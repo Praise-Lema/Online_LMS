@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/LMS/') ? 'active' : '' ?> fs-6" aria-current="page" href="<?php echo APP_URL?>">Home</a>
+          <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/LMS') ? 'active' : '' ?> fs-6" aria-current="page" href="<?php echo APP_URL?>">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/LMS/index.php#categories') ? 'active' : '' ?> fs-6" href="<?php echo APP_URL?>/index.php#categories">Categories</a>

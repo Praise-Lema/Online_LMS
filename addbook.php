@@ -13,42 +13,53 @@ include_once __DIR__.'/partials/sidebar.php';
     <div class="container p-5 bg-body-secondary rounded">
     <h2 class="text-center">Add Book..</h2>
 
+    <?php if(isset($_GET['msg'])): ?>
+        <div class="alert alert-success m-3 p-2">Book Added Succesfully..</div>
+    <?php endif; ?>
+
         <div class="container">
-            <form action="" method="post" class="forms" enctype="multipart/form-data">
-            <?php if(isset($_GET['error'])): ?>
-            <div class="<?php echo $_GET['msg_class'];?> m-3 p-2"><?php echo $_GET['error']; ?></div>
-            <?php endif; ?>
+            <form action="addbook.php" method="post" class="forms" enctype="multipart/form-data">
 
                 <div class="form-group m-3 fs-5">
                     <label for="title" class="py-1">Book Title:</label>
-                    <input type="text" name="title" class="form-control rounded-0 bg-transparent focus-ring focus-ring-success">
+                    <input type="text" name="title" value="<?php echo $title ?>" class="form-control rounded-0 <?php echo isset($errors['title']) ? 'is-invalid' : ''?> bg-transparent focus-ring focus-ring-success">
+                    <span class="invalid-feedback"><?php echo $errors['title']?></span>
                 </div>
+
                 <div class="form-group m-3 fs-5">
                     <label for="author" class="py-1">Book Author:</label>
-                    <input type="text" name="author" class="form-control rounded-0 bg-transparent focus-ring focus-ring-success">
+                    <input type="text" name="author" value="<?php echo $author ?>" class="form-control rounded-0 <?php echo isset($errors['author']) ? 'is-invalid' : ''?> bg-transparent focus-ring focus-ring-success">
+                    <span class="invalid-feedback"><?php echo $errors['author']?></span>
                 </div>
+
                 <div class="form-group m-3 fs-5">
                     <label for="isbn" class="py-1">Book isbn:</label>
-                    <input type="text" name="isbn" class="form-control rounded-0 bg-transparent focus-ring focus-ring-success" maxlength="6">
+                    <input type="text" name="isbn" value="<?php echo $isbn ?>" class="form-control rounded-0 <?php echo isset($errors['isbn']) ? 'is-invalid' : ''?> bg-transparent focus-ring focus-ring-success" maxlength="6">
+                    <span class="invalid-feedback"><?php echo $errors['isbn']?></span>
                 </div>
+
                 <div class="form-group m-3 fs-5">
                     <label for="category" class="py-1">Book Category:</label>
                     <select name="category" class="form-select p-2 border rounded focus-ring focus-ring-success bg-light" id="category">
-                        <!-- <?php foreach($cats as $cat): ?>
-                        <option value="<?php echo $cat->name;?>"><?php echo $cat->name;?></option>
-                        <?php endforeach; ?> -->
                         <option value="Science">Science</option>
+                        <option value="Science">Arts & Design</option>
+                        <option value="Science">Philosophy</option>
                     </select>
+
                 </div>
                 <div class="row">
                     <div class="form-group col-6 m-3 fs-5">
                         <label for="book_file" class="py-1">Book File:</label>
-                        <input type="file" name="book_file" class="form-control focus-ring focus-ring-success">
+                        <input type="file" name="book_file" class="form-control <?php echo isset($errors['book_file']) ? 'is-invalid' : ''?> focus-ring focus-ring-success">
+                        <span class="invalid-feedback"><?php echo $errors['book_file']?></span>
+
                     </div>
 
                     <div class="form-group col-5 m-3 fs-5">
                         <label for="cover_img" class="py-1">Cover Image:</label>
-                        <input type="file" name="cover_img" class="form-control focus-ring focus-ring-success">
+                        <input type="file" name="cover_img" class="form-control <?php echo isset($errors['cover_img']) ? 'is-invalid' : ''?> focus-ring focus-ring-success">
+                        <span class="invalid-feedback"><?php echo $errors['cover_img']?></span>
+
                     </div>
                 </div>
 

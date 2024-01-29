@@ -40,7 +40,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }
         }else{
             $errors['email'] = LOGIN_ERR;
-            // $result='wrong password or email';
         }
     } 
 }
